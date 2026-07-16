@@ -7,3 +7,14 @@ app.get('/',(req,res)=>{
 app.listen(PORT,()=>{
     console.log(`Server runnign on http://localhost:${PORT}`);
 });
+app.get('/', (req, res) => {
+  res.json({
+    name: "Task API",
+    version: "1.0",
+    endpoints: ["/tasks"]
+  });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ status: "ok" });
+});
